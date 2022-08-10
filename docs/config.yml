@@ -1,0 +1,51 @@
+baseURL: http://localhost:1313
+languageCode: en-us
+title: Sludge Documentation
+theme: "PaperMod"
+
+menu:
+    main:
+        - name: Documentation
+          url: docs
+          weight: 10
+        - name: FAQs
+          url: faqs
+          weight: 20
+        - name: samredai/sludge
+          url: https://github.com/samredai/sludge
+          weight: 30
+
+params:
+    description: "Sludge - https://github.com/samredai/sludge"
+    disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
+    ShowToc: true
+    images: ["papermod-cover.png"]
+
+    profileMode:
+        enabled: true
+        title: A Terminal UI For SLURM
+        imageUrl: "/images/sludge-logo2.png"
+        imageTitle: sludge-logo
+        imageWidth: 659
+        imageHeight: 238
+        buttons:
+            - name: Documentation
+              url: docs
+            - name: FAQs
+              url: faqs
+
+    socialIcons:
+        - name: GitHub
+          url: "https://github.com/samredai/sludge"
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true

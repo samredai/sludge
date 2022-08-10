@@ -1,0 +1,26 @@
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        GOOS: [linux]
+        GOARCH: [amd64]
+    steps:
+      - name: Check Sludge Repo
+        uses: actions/checkout@v3
+      - name: Build the Docker Build Image
+        run: docker build -t build-sludge .build
+      - name: Build Sludge Binary
+        run: docker run -v ${PWD}:/root/sludge -t build-sludge ${{ matrix.GOOS }} ${{ matrix.GOARCH }} sludge-${{ matrix.GOOS }}-${{ matrix.GOARCH }}
+      - name: Modify Binary Permissions
+        run: sudo chmod +x sludge-${{ matrix.GOOS }}-${{ matrix.GOARCH }}
+      - name: Release All Binaries
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            sludge-${{ matrix.GOOS }}-${{ matrix.GOARCH }}
