@@ -11,7 +11,7 @@ Create a `bin` directory and download the sludge binary there.
 ```sh
 mkdir -p $HOME/bin
 cd $HOME/bin
-wget -P $HOME/bin https://github.com/samredai/sludge/releases/download/0.1.7rc/sludge-linux-amd64 -O sludge
+wget -P $HOME/bin https://github.com/samredai/sludge/releases/download/0.1.0-alpha.1/sludge-linux-amd64 -O sludge
 ```
 
 Add the bin directory to your `PATH` variable.
