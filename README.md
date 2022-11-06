@@ -12,9 +12,10 @@ Create a `bin` directory and download the sludge binary there.
 mkdir -p $HOME/bin
 cd $HOME/bin
 wget -P $HOME/bin https://github.com/samredai/sludge/releases/download/0.1.0-alpha.1/sludge-linux-amd64 -O sludge
+chmod +x $HOME/bin/sludge
 ```
 
-Add the bin directory to your `PATH` variable.
+Add the bin directory to your `PATH` variable by including the following in your `~/.bashrc` file.
 ```sh
 export PATH=$HOME/bin:$PATH
 ```
